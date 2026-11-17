@@ -1,0 +1,4 @@
+<div class="mb-3"><label class="form-label">Nome</label><input type="text" name="nome" class="form-control" value="<?= escapar($usuario["nome"] ?? "") ?>" required></div>
+<div class="mb-3"><label class="form-label">E-mail</label><input type="email" name="email" class="form-control" value="<?= escapar($usuario["email"] ?? "") ?>" required></div>
+<div class="mb-3"><label class="form-label">Perfil</label><select name="perfil" class="form-select" required><?php foreach (["Administrador", "Recepcionista", "Medico"] as $perfil): ?><option value="<?= $perfil ?>" <?= (($usuario["perfil"] ?? "") === $perfil) ? "selected" : "" ?>><?= $perfil ?></option><?php endforeach; ?></select></div>
+<div class="mb-3"><label class="form-label"><?= isset($usuario) ? "Nova senha (opcional)" : "Senha" ?></label><input type="password" name="senha" class="form-control" <?= isset($usuario) ? "" : "required" ?> minlength="6"></div>
